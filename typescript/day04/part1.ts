@@ -6,8 +6,8 @@ export default function part1(input: string) {
   const results: number[] = [];
 
   lines.forEach((line) => {
-    const numbers = line.split(":");
-    numbers.splice(0, 1);
+    const numbers = [line.split(":")[1]];
+
     const [winningNums, myNums] = numbers
       .map((number) => number.split("|"))
       .flat()
