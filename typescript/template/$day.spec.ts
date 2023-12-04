@@ -6,12 +6,12 @@ const testInput1 = ``;
 describe("day$day", () => {
   describe("Part 1", () => {
     it.skip("should return something", () => {
-      expect(true).toBe(true);
+      expect(part1(testInput1)).toBe(true);
     });
   });
   describe("Part 2", () => {
     it.skip("should return something", () => {
-      expect(true).toBe(true);
+      expect(part2(testInput1)).toBe(true);
     });
   });
 });
