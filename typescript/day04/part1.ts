@@ -6,11 +6,10 @@ export default function part1(input: string) {
   const results: number[] = [];
 
   lines.forEach((line) => {
-    const numbers = [line.split(":")[1]];
+    const [_, numbers] = line.split(":");
 
     const [winningNums, myNums] = numbers
-      .map((number) => number.split("|"))
-      .flat()
+      .split("|")
       .map((num) => num.trim().split(" ").filter(Number));
 
     const winners: number[] = [];
