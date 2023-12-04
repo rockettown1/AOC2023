@@ -25,17 +25,19 @@ export default function part2(input: string) {
     results.push({ copies: 0, winners: winners.length });
   });
 
-  for (let j = 0; j < results.length; j++) {
-    let cards = results[j].copies + 1;
+  results.forEach((card, index) => {
+    let cards = card.copies + 1;
     while (cards > 0) {
-      for (let i = j; i - j < results[j].winners; i++) {
+      for (let i = index; i - index < card.winners; i++) {
         results[i + 1].copies++;
       }
       cards--;
     }
-  }
+  });
 
   return results
     .map((card) => card.copies + 1)
     .reduce((prev, cur) => prev + cur);
 }
+
+console.log(part2(input));
